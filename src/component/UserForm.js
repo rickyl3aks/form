@@ -63,7 +63,9 @@ class UserForm extends Component {
           />
         );
       case 4:
-        return <Success />;
+        return (
+          <Success firstName={this.state.firstName} email={this.state.email} />
+        );
     }
   }
 }

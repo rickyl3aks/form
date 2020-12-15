@@ -14,13 +14,17 @@ class Success extends Component {
     this.props.prevStep();
   };
 
-  render() {
+  render(props) {
+    const { firstName, email } = this.props;
     return (
       <MuiThemeProvider>
         <React.Fragment>
           <AppBar title="Success" />
-          <h1>Thank you for your Submission</h1>
-          <p>You will get an email with further instruction</p>
+          <h1>
+            Thank you for your Submission{" "}
+            {firstName.charAt(0).toUpperCase() + firstName.slice(1)}
+          </h1>
+          <p>You will receive an email to {email} with further instruction</p>
         </React.Fragment>
       </MuiThemeProvider>
     );
